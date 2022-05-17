@@ -1,0 +1,21 @@
+:root {
+  color-scheme: light;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+
+  // md size
+
+  // lg size
+
+  // xl size
+}
+
+[color-scheme="light"] {
+  color-scheme: light;
+}
+
+[color-scheme="dark"] {
+  color-scheme: dark;
+}
