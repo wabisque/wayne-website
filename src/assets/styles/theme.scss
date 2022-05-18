@@ -1,21 +1,35 @@
 :root {
+  --theme-color-background-light: 0 0% 100%;
+  --theme-color-text-light: 0 0% 7%;
+
+  --theme-color-background-dark: 0 0% 7%;
+  --theme-color-text-dark: 0 0% 100%;
+
+  --theme-color-background: var(--theme-color-background-light);
+  --theme-color-text: var(--theme-color-text-light);
+
   color-scheme: light;
 
   @media (prefers-color-scheme: dark) {
+    --theme-color-background: var(--theme-color-background-dark);
+    --theme-color-text: var(--theme-color-text-dark);
+
     color-scheme: dark;
   }
 
-  // md size
-
   // lg size
-
-  // xl size
 }
 
 [color-scheme="light"] {
+  --theme-color-background: var(--theme-color-background-light);
+  --theme-color-text: var(--theme-color-text-light);
+
   color-scheme: light;
 }
 
 [color-scheme="dark"] {
+  --theme-color-background: var(--theme-color-background-dark);
+  --theme-color-text: var(--theme-color-text-dark);
+
   color-scheme: dark;
 }

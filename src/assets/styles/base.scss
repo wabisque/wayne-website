@@ -2,13 +2,52 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  color: inherit;
   font-family: inherit;
   font-weight: normal;
   margin: 0;
   position: relative;
+  transition-duration: 200ms;
+  transition-property: none;
+  transition-timing-function: ease-out;
 }
 
 :root {
   font-family: system-ui;
-  font-weight: 14px;
+  font-size: 14px;
+  color: hsl(var(--theme-color-text));
+}
+
+:where(body) {
+  background-color: hsl(var(--theme-color-background));
+  inline-size: 100%;
+  margin: 0;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  margin-block: 1em;
+}
+
+:where(h1) {
+  font-size: 3em;
+}
+
+:where(h2) {
+  font-size: 2.2em;
+}
+
+:where(h3) {
+  font-size: 1.7em;
+}
+
+:where(h4) {
+  font-size: 1.4em;
+}
+
+:where(h5) {
+  font-size: 1.2em;
+}
+
+:where(h6) {
+  font-size: 1.1em;
 }
