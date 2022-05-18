@@ -14,6 +14,10 @@ let emit = defineEmits([ 'navigate' ]);
 let props = defineProps(
   {
     ...RouterLink.props,
+    color: {
+      type: String,
+      default: 'hsl(var(--theme-color-text))'
+    },
     menu: {
       type: Array,
       default: []
@@ -91,6 +95,7 @@ onMounted(
   :data-opened="opened || undefined"
   :href="href"
   ref="handle"
+  :style="{ '--NavigationLink-color': props.color }"
   :target="external ? '__blank' : undefined"
   @click="navigateLink"
   @mouseover="
@@ -110,7 +115,7 @@ onMounted(
       data-component-teleport="NavigationLinkGroup"
       :data-opened="opened || undefined"
       :style="{
-        left: `calc(${position.left + (position.right - position.left) / 2}px - 7.5rem)`,
+        left: `calc(${position.left + (position.right - position.left) / 2}px - 7em)`,
         top: `calc(${position.bottom}px + 0.4em)`
       }"
       @mouseover="open();"
@@ -120,7 +125,7 @@ onMounted(
         v-bind="item.props"
         v-for="item in props.menu"
       >
-        <template v-html="item.slot"></template>
+        <span :class="item.icon ? 'icon' : 'text'" v-html="item.icon ?? item.text"></span>
       </NavigationLink>
     </div>
   </Teleport>
@@ -130,16 +135,17 @@ onMounted(
 <style lang="scss" scoped>
 [data-component="NavigationLinkGroup"] {
   align-items: center;
+  color: var(--NavigationLink-color);
   display: inline-flex;
-  padding: 1em;
+  padding: 0.5em;
   text-decoration: none;
 
   :slotted(.text) {
     &::before {
-      border-block-start: 1px solid hsl(var(--theme-color-text));
+      border-block-start: 1px solid var(--NavigationLink-color);
       content: "";
       inline-size: 100%;
-      inset-block-end: -2px;
+      inset-block-end: -4px;
       inset-inline-start: 0;
       position: absolute;
       opacity: 0;
@@ -150,7 +156,7 @@ onMounted(
   :slotted(.icon) {
     aspect-ratio: 1 / 1;
     block-size: 1.25em;
-    fill: hsl(var(--theme-color-text));
+    fill: var(--NavigationLink-color);
   }
 
   &[data-active],
@@ -169,9 +175,10 @@ onMounted(
   display: flex;
   flex-direction: column;
   inline-size: 100%;
-  max-inline-size: 15em;
+  max-inline-size: 14em;
   opacity: 0;
-  padding: 1em;
+  padding-block: 1em;
+  padding-inline: 0.75em;
   pointer-events: none;
   position: fixed;
   transition-property: opacity;

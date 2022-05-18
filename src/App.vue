@@ -25,7 +25,53 @@ provide('navigationHeight', navigationHeight);
     </a>
 
     <div class="navigation__menu">
-      <NavigationLinkGroup to="/">
+      <NavigationLinkGroup
+        :menu="[
+          {
+            props: {
+              color: 'hsl(var(--theme-color-background))',
+              to: '/'
+            },
+            text: 'weddings'
+          },
+          {
+            props: {
+              color: 'hsl(var(--theme-color-background))',
+              to: '/'
+            },
+            text: 'events'
+          },
+          {
+            props: {
+              color: 'hsl(var(--theme-color-background))',
+              to: '/'
+            },
+            text: 'portraits'
+          },
+          {
+            props: {
+              color: 'hsl(var(--theme-color-background))',
+              to: '/'
+            },
+            text: 'fashion'
+          },
+          {
+            props: {
+              color: 'hsl(var(--theme-color-background))',
+              to: '/'
+            },
+            text: 'food'
+          },
+          {
+            props: {
+              color: 'hsl(var(--theme-color-background))',
+              to: '/'
+            },
+            text: 'product'
+          },
+        ]"
+        to="/"
+      >
         <span class="text">+ photos</span>
       </NavigationLinkGroup>
 
@@ -37,7 +83,25 @@ provide('navigationHeight', navigationHeight);
         <span class="text">about</span>
       </NavigationLink>
 
-      <NavigationLinkGroup to="/">
+      <NavigationLinkGroup
+        :menu="[
+          {
+            props: {
+              color: 'hsl(var(--theme-color-background))',
+              to: '/'
+            },
+            text: 'bookings'
+          },
+          {
+            props: {
+              color: 'hsl(var(--theme-color-background))',
+              to: '/'
+            },
+            text: 'customer service'
+          }
+        ]"
+        to="/"
+      >
         <span class="text">+ contact</span>
       </NavigationLinkGroup>
 
@@ -89,5 +153,6 @@ provide('navigationHeight', navigationHeight);
 .navigation__menu {
   align-items: stretch;
   display: flex;
+  gap: 1em;
 }
 </style>
