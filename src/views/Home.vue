@@ -36,7 +36,7 @@ const rotate = event => {
       :to="item.to"
       v-for="item in route.meta.payload"
     >
-      <img :alt="item.to" class="home-image__background" :src="item.src">
+      <img :alt="item.to.name" class="home-image__background" :src="item.src">
 
       <div class="home-image__text">
         <span class="home-image__text__group">{{ item.to.name.split('-')[0].toUpperCase() }} / </span>
