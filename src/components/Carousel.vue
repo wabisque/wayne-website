@@ -354,6 +354,7 @@ onMounted(
         color: hsl(var(--Carousel-background-color));
         font-size: 1.25em;
         padding: 0.75em;
+        z-index: 2;
       }
 
       .home-image__text__group {

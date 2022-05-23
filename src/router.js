@@ -8,27 +8,39 @@ let routes = [
     meta: {
       payload: [
         {
+          backgroundColor: 'var(--theme-color-dark)',
           src: '/wayne-website/images/1.jpg',
+          textColor: 'var(--theme-color-light)',
           to: { name: 'Photos-Weddings' }
         },
         {
+          backgroundColor: 'var(--theme-color-dark)',
           src: '/wayne-website/images/2.jpg',
+          textColor: 'var(--theme-color-light)',
           to: { name: 'Photos-Events' }
         },
         {
+          backgroundColor: 'var(--theme-color-dark)',
           src: '/wayne-website/images/3.jpg',
+          textColor: 'var(--theme-color-light)',
           to: { name: 'Photos-Portraits' }
         },
         {
+          backgroundColor: 'var(--theme-color-dark)',
           src: '/wayne-website/images/4.jpg',
+          textColor: 'var(--theme-color-light)',
           to: { name: 'Photos-Fashion' }
         },
         {
+          backgroundColor: 'var(--theme-color-dark)',
           src: '/wayne-website/images/5.jpg',
+          textColor: 'var(--theme-color-light)',
           to: { name: 'Photos-Food' }
         },
         {
+          backgroundColor: 'var(--theme-color-dark)',
           src: '/wayne-website/images/6.jpg',
+          textColor: 'var(--theme-color-light)',
           to: { name: 'Photos-Product' }
         }
       ]
