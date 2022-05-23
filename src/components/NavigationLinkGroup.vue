@@ -14,14 +14,22 @@ let emit = defineEmits([ 'navigate' ]);
 let props = defineProps(
   {
     ...RouterLink.props,
-    color: {
+    backgroundColor: {
       type: String,
-      default: 'hsl(var(--theme-color-text))'
+      default: 'hsl(var(--theme-color-background))'
     },
     menu: {
       type: Array,
       default: []
-    }
+    },
+    mobile: {
+      type: Boolean,
+      default: false
+    },
+    textColor: {
+      type: String,
+      default: 'hsl(var(--theme-color-text))'
+    },
   }
 );
 let attrs = useAttrs();
@@ -89,13 +97,16 @@ onMounted(
 <template>
 <a
   data-component="NavigationLinkGroup"
-  :data-active="active || undefined"
+  :data-active="isActive || undefined"
   :data-exact-active="isExactActive || undefined"
   :data-hovered="hovered || undefined"
   :data-opened="opened || undefined"
   :href="href"
   ref="handle"
-  :style="{ '--NavigationLink-color': props.color }"
+  :style="{
+    '--NavigationLinkGroup-background-color': props.backgroundColor,
+    '--NavigationLinkGroup-text-color': props.textColor
+  }"
   :target="external ? '__blank' : undefined"
   @click="navigateLink"
   @mouseover="
@@ -115,13 +126,16 @@ onMounted(
       data-component-teleport="NavigationLinkGroup"
       :data-opened="opened || undefined"
       :style="{
+        '--NavigationLinkGroup-text-color': props.textColor,
         left: `calc(${position.left + (position.right - position.left) / 2}px - 7em)`,
         top: `calc(${position.bottom}px + 0.4em)`
       }"
       @mouseover="open();"
       @mouseleave="close();"
+      v-if="!mobile"
     >
       <NavigationLink
+        :text-color="props.backgroundColor"
         v-bind="item.props"
         v-for="item in props.menu"
       >
@@ -130,19 +144,29 @@ onMounted(
     </div>
   </Teleport>
 </a>
+
+<div class="menu" v-if="mobile">
+  <NavigationLink
+    :text-color="props.textColor"
+    v-bind="item.props"
+    v-for="item in props.menu"
+  >
+    <span :class="item.icon ? 'icon' : 'text'" v-html="item.icon ?? item.text"></span>
+  </NavigationLink>
+</div>
 </template>
 
 <style lang="scss" scoped>
 [data-component="NavigationLinkGroup"] {
   align-items: center;
-  color: var(--NavigationLink-color);
+  color: var(--NavigationLinkGroup-text-color);
   display: inline-flex;
   padding: 0.5em;
   text-decoration: none;
 
   :slotted(.text) {
     &::before {
-      border-block-start: 1px solid var(--NavigationLink-color);
+      border-block-start: 1px solid var(--NavigationLinkGroup-text-color);
       content: "";
       inline-size: 100%;
       inset-block-end: -4px;
@@ -156,7 +180,7 @@ onMounted(
   :slotted(.icon) {
     aspect-ratio: 1 / 1;
     block-size: 1.25em;
-    fill: var(--NavigationLink-color);
+    fill: var(--NavigationLinkGroup-text-color);
   }
 
   &[data-active],
@@ -165,13 +189,22 @@ onMounted(
       opacity: 1;
     }
   }
+
+  & ~ .menu {
+    align-items: baseline;
+    color: var(--NavigationLinkGroup-text-color);
+    display: flex;
+    flex-direction: column;
+    inline-size: 100%;
+    padding-block: 0.5em 1em;
+    padding-inline: 1.5em 0.5em;
+  }
 }
 </style>
 
 <style lang="scss">
 [data-component-teleport="NavigationLinkGroup"] {
-  background-color: hsl(var(--theme-color-text));
-  color: hsl(var(--theme-color-background));
+  background-color: var(--NavigationLinkGroup-text-color);
   display: flex;
   flex-direction: column;
   inline-size: 100%;
@@ -182,11 +215,12 @@ onMounted(
   pointer-events: none;
   position: fixed;
   transition-property: opacity;
+  z-index: 3000;
 
   &::before {
     border-block: 0.4em solid transparent;
     border-inline: 0.6em solid transparent;
-    border-block-end-color: hsl(var(--theme-color-text));
+    border-block-end-color: var(--NavigationLinkGroup-text-color);
     content: "";
     inset-block-end: calc(100% + 1px);
     inset-inline-start: calc(50% - 0.6em);

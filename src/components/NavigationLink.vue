@@ -1,12 +1,12 @@
 <script setup>
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import { RouterLink, useLink } from 'vue-router';
 
 let emit = defineEmits([ 'navigate' ]);
 let props = defineProps(
   { 
     ...RouterLink.props,
-    color: {
+    textColor: {
       type: String,
       default: 'hsl(var(--theme-color-text))'
     }
@@ -37,7 +37,7 @@ onMounted(() => isActive && emit('navigate'));
   :data-exact-active="isExactActive || undefined"
   :data-hovered="hovered || undefined"
   :href="href"
-  :style="{ '--NavigationLink-color': props.color }"
+  :style="{ '--NavigationLink-text-color': props.textColor }"
   :target="external ? '__blank' : undefined"
   @click="navigateLink"
   @mouseover="hovered = true;"
@@ -50,14 +50,14 @@ onMounted(() => isActive && emit('navigate'));
 <style lang="scss" scoped>
 [data-component="NavigationLink"] {
   align-items: center;
-  color: var(--NavigationLink-color);
+  color: var(--NavigationLink-text-color);
   display: inline-flex;
   padding: 0.5em;
   text-decoration: none;
 
   :slotted(.text) {
     &::before {
-      border-block-start: 1px solid var(--NavigationLink-color);
+      border-block-start: 1px solid var(--NavigationLink-text-color);
       content: "";
       inline-size: 100%;
       inset-block-end: -4px;
@@ -71,7 +71,7 @@ onMounted(() => isActive && emit('navigate'));
   :slotted(.icon) {
     aspect-ratio: 1 / 1;
     block-size: 1.25em;
-    fill: var(--NavigationLink-color);
+    fill: var(--NavigationLink-text-color);
   }
 
   &[data-active],
