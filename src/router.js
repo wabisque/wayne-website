@@ -8,27 +8,27 @@ let routes = [
     meta: {
       payload: [
         {
-          src: 'images/1.jpg',
+          src: '/wayne-website/images/1.jpg',
           to: { name: 'Photos-Weddings' }
         },
         {
-          src: 'images/2.jpg',
+          src: '/wayne-website/images/2.jpg',
           to: { name: 'Photos-Events' }
         },
         {
-          src: 'images/3.jpg',
+          src: '/wayne-website/images/3.jpg',
           to: { name: 'Photos-Portraits' }
         },
         {
-          src: 'images/4.jpg',
+          src: '/wayne-website/images/4.jpg',
           to: { name: 'Photos-Fashion' }
         },
         {
-          src: 'images/5.jpg',
+          src: '/wayne-website/images/5.jpg',
           to: { name: 'Photos-Food' }
         },
         {
-          src: 'images/6.jpg',
+          src: '/wayne-website/images/6.jpg',
           to: { name: 'Photos-Product' }
         }
       ]
@@ -40,12 +40,12 @@ let routes = [
     component: async () => await import('@/views/Images.vue'),
     meta: {
       payload: [
-        'images/1.jpg',
-        'images/2.jpg',
-        'images/3.jpg',
-        'images/4.jpg',
-        'images/5.jpg',
-        'images/6.jpg'
+        '/wayne-website/images/1.jpg',
+        '/wayne-website/images/2.jpg',
+        '/wayne-website/images/3.jpg',
+        '/wayne-website/images/4.jpg',
+        '/wayne-website/images/5.jpg',
+        '/wayne-website/images/6.jpg'
       ]
     }
   },
@@ -55,12 +55,12 @@ let routes = [
     component: async () => await import('@/views/Images.vue'),
     meta: {
       payload: [
-        'images/1.jpg',
-        'images/2.jpg',
-        'images/3.jpg',
-        'images/4.jpg',
-        'images/5.jpg',
-        'images/6.jpg'
+        '/wayne-website/images/1.jpg',
+        '/wayne-website/images/2.jpg',
+        '/wayne-website/images/3.jpg',
+        '/wayne-website/images/4.jpg',
+        '/wayne-website/images/5.jpg',
+        '/wayne-website/images/6.jpg'
       ]
     }
   },
@@ -70,12 +70,12 @@ let routes = [
     component: async () => await import('@/views/Images.vue'),
     meta: {
       payload: [
-        'images/1.jpg',
-        'images/2.jpg',
-        'images/3.jpg',
-        'images/4.jpg',
-        'images/5.jpg',
-        'images/6.jpg'
+        '/wayne-website/images/1.jpg',
+        '/wayne-website/images/2.jpg',
+        '/wayne-website/images/3.jpg',
+        '/wayne-website/images/4.jpg',
+        '/wayne-website/images/5.jpg',
+        '/wayne-website/images/6.jpg'
       ]
     }
   },
@@ -85,12 +85,12 @@ let routes = [
     component: async () => await import('@/views/Images.vue'),
     meta: {
       payload: [
-        'images/1.jpg',
-        'images/2.jpg',
-        'images/3.jpg',
-        'images/4.jpg',
-        'images/5.jpg',
-        'images/6.jpg'
+        '/wayne-website/images/1.jpg',
+        '/wayne-website/images/2.jpg',
+        '/wayne-website/images/3.jpg',
+        '/wayne-website/images/4.jpg',
+        '/wayne-website/images/5.jpg',
+        '/wayne-website/images/6.jpg'
       ]
     }
   },
@@ -100,12 +100,12 @@ let routes = [
     component: async () => await import('@/views/Images.vue'),
     meta: {
       payload: [
-        'images/1.jpg',
-        'images/2.jpg',
-        'images/3.jpg',
-        'images/4.jpg',
-        'images/5.jpg',
-        'images/6.jpg'
+        '/wayne-website/images/1.jpg',
+        '/wayne-website/images/2.jpg',
+        '/wayne-website/images/3.jpg',
+        '/wayne-website/images/4.jpg',
+        '/wayne-website/images/5.jpg',
+        '/wayne-website/images/6.jpg'
       ]
     }
   },
@@ -115,12 +115,12 @@ let routes = [
     component: async () => await import('@/views/Images.vue'),
     meta: {
       payload: [
-        'images/1.jpg',
-        'images/2.jpg',
-        'images/3.jpg',
-        'images/4.jpg',
-        'images/5.jpg',
-        'images/6.jpg'
+        '/wayne-website/images/1.jpg',
+        '/wayne-website/images/2.jpg',
+        '/wayne-website/images/3.jpg',
+        '/wayne-website/images/4.jpg',
+        '/wayne-website/images/5.jpg',
+        '/wayne-website/images/6.jpg'
       ]
     }
   },
