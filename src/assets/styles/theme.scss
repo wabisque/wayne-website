@@ -1,20 +1,30 @@
 :root {
+  --theme-color-blue: 208 100% 50%;
   --theme-color-dark: 0 0% 7%;
+  --theme-color-dark-gray: 0 0% 50%;
+  --theme-color-red: 146 100% 50%;
   --theme-color-light: 0 0% 100%;
+  --theme-color-light-gray: 0 0% 75%;
+  --theme-color-red: 344 100% 50%;
+  --theme-color-yellow: 44 100% 50%;
 
-  --theme-color-background-light: 0 0% 100%;
-  --theme-color-text-light: 0 0% 7%;
+  --theme-color-background-light: var(--theme-color-light);
+  --theme-color-mute-light: var(--theme-color-dark-gray);
+  --theme-color-text-light: var(--theme-color-dark);
 
-  --theme-color-background-dark: 0 0% 7%;
-  --theme-color-text-dark: 0 0% 100%;
+  --theme-color-background-dark: var(--theme-color-dark);
+  --theme-color-mute-dark: var(--theme-color-light-gray);
+  --theme-color-text-dark: var(--theme-color-light);
 
   --theme-color-background: var(--theme-color-background-light);
+  --theme-color-mute: var(--theme-color-mute-light);
   --theme-color-text: var(--theme-color-text-light);
 
   color-scheme: light;
 
   @media (prefers-color-scheme: dark) {
     --theme-color-background: var(--theme-color-background-dark);
+    --theme-color-mute: var(--theme-color-mute-dark);
     --theme-color-text: var(--theme-color-text-dark);
 
     color-scheme: dark;
@@ -25,6 +35,7 @@
 
 [color-scheme="light"] {
   --theme-color-background: var(--theme-color-background-light);
+  --theme-color-mute: var(--theme-color-mute-light);
   --theme-color-text: var(--theme-color-text-light);
 
   color-scheme: light;
@@ -32,6 +43,7 @@
 
 [color-scheme="dark"] {
   --theme-color-background: var(--theme-color-background-dark);
+  --theme-color-mute: var(--theme-color-mute-dark);
   --theme-color-text: var(--theme-color-text-dark);
 
   color-scheme: dark;

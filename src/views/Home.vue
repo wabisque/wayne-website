@@ -1,57 +1,108 @@
+
 <script setup>
-import { useRoute } from 'vue-router';
+import { inject } from 'vue';
+import { useApp } from '../stores/app';
+import Carousel from '../components/Carousel.vue';
 
-import { useAppColor } from '@/stores/app.js';
+const appStore = useApp();
 
-import Carousel from '@/components/Carousel.vue';
-import NavigationLink from '@/components/NavigationLink.vue';
+const isMobileMode = inject('App_isMobileMode');
+const navigationHovered = inject('App_navigationHovered');
 
-const appColorStore = useAppColor();
-
-const route = useRoute();
-
-const rotate = event => {
-  appColorStore.$reset();
-
-  if(event.target.dataset.appBackgroundColor)
-    appColorStore.background = event.target.dataset.appBackgroundColor;
-
-  if(event.target.dataset.appTextColor)
-    appColorStore.text = event.target.dataset.appTextColor;
-}
+const carousel_onrotate = event => {
+  appStore.description = event.target.dataset.description;
+  appStore.colors.background = event.target.dataset.background;
+  appStore.colors.text = event.target.dataset.text;
+};
 </script>
 
 <template>
-<div data-view="Home">
-  <Carousel
-    class="carousel"
-    overlay
-    rotate
-    @rotate="rotate"
-  >
-    <NavigationLink
-      class="home-image"
-      :data-app-background-color="item.backgroundColor || undefined"
-      :data-app-text-color="item.textColor || undefined"
-      :to="item.to"
-      v-for="item in route.meta.payload"
-    >
-      <img :alt="item.to.name" class="home-image__background" :src="item.src">
+<div
+  class=":view--home"
+  :style="{
+    '--background-color': appStore.colors.background
+  }"
+>
+  <div
+    class="shadow"
+    :class="{
+      ':active': navigationHovered && !isMobileMode
+    }"
+  ></div>
 
-      <div class="home-image__text">
-        <span class="home-image__text__group">{{ item.to.name.split('-')[0].toUpperCase() }} / </span>
-        <span class="home-image__text__detail">{{ item.to.name.split('-')[1].toUpperCase() }}</span>
-      </div>
-    </NavigationLink>
+  <Carousel
+    auto-rotate
+    class="carousel"
+    @rotate="carousel_onrotate"
+  >
+    <RouterLink
+      class="carousel__item"
+      :data-background="image.background"
+      :data-description="image.description"
+      :data-text="image.text"
+      :to="image.to ?? $route"
+      v-for="image in $route.meta.images"
+    >
+      <img
+        class="carousel__item__image"
+        loading="lazy"
+        :src="image.src"
+      >
+    </RouterLink>
   </Carousel>
 </div>
 </template>
 
+<style lang="scss">
+.\:view--home {
+  & > .carousel {
+    & > .controls {
+      @media screen and (min-width: 770px) {
+        margin-inline: auto;
+        max-inline-size: min(160ch, 90%);
+      }
+    }
+
+    & > .scroller {
+      & > .carousel__item {
+        block-size: 100%;
+        inline-size: 100%;
+
+        & > .carousel__item__image {
+          block-size: 100%;
+          inline-size: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+  }
+}
+</style>
+
 <style lang="scss" scoped>
-[data-view="Home"] {
-  block-size: 100%;
+.\:view--home {
+  block-size: 100vh;
+  display: grid;
+  grid-template-columns: [fullbleed-start] 100% [fullbleed-end];
+  grid-template-rows: [fullbleed-start] 100% [fullbleed-end];
   grid-area: fullbleed;
-  inline-size: 100%;
-  overflow: hidden;
+
+  & > .shadow {
+    background-color: hsl(var(--background-color));
+    grid-area: fullbleed;
+    opacity: 0;
+    pointer-events: none;
+    transition-property: background-color, opacity;
+    z-index: 1;
+
+    &.\:active {
+      opacity: 0.35;
+    }
+  }
+
+  & > .carousel {
+    grid-area: fullbleed;
+  }
 }
 </style>

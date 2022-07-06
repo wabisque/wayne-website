@@ -1,8 +1,17 @@
+
 import { defineStore } from 'pinia';
 
-export const useAppColor = defineStore(
-  'appColor',
+export const useApp = defineStore(
+  'app/index',
   {
-    state: () => ({ background: 'var(--theme-color-background)', text: 'var(--theme-color-text)' }),
+    state: () => ({
+      description: '',
+      colors: {
+        background: 'var(--theme-color-background)',
+        text: 'var(--theme-color-text)'
+      },
+      viewerImage: '',
+      viewerActive: false
+    })
   }
 );
