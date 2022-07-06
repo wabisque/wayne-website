@@ -22,42 +22,42 @@ export default [
         meta: {
           images: [
             {
-              src: '/images/1.jpg',
+              src: '/wayne-website/images/1.jpg',
               description: '<span style="opacity: 0.5">photo /</span> <span>weddings</span>',
               background: 'var(--theme-color-dark)',
               text: 'var(--theme-color-light)',
               to: { name: 'PhotoWeddings' }
             },
             {
-              src: '/images/2.jpg',
+              src: '/wayne-website/images/2.jpg',
               description: '<span style="opacity: 0.5">photo /</span> <span>events</span>',
               background: 'var(--theme-color-dark)',
               text: 'var(--theme-color-light)',
               to: { name: 'PhotoEvents' }
             },
             {
-              src: '/images/3.jpg',
+              src: '/wayne-website/images/3.jpg',
               description: '<span style="opacity: 0.5">photo /</span> <span>portraits</span>',
               background: 'var(--theme-color-dark)',
               text: 'var(--theme-color-light)',
               to: { name: 'PhotoPortraits' }
             },
             {
-              src: '/images/4.jpg',
+              src: '/wayne-website/images/4.jpg',
               description: '<span style="opacity: 0.5">photo /</span> <span>fashion</span>',
               background: 'var(--theme-color-dark)',
               text: 'var(--theme-color-light)',
               to: { name: 'PhotoFashion' }
             },
             {
-              src: '/images/5.jpg',
+              src: '/wayne-website/images/5.jpg',
               description: '<span style="opacity: 0.5">photo /</span> <span>food</span>',
               background: 'var(--theme-color-dark)',
               text: 'var(--theme-color-light)',
               to: { name: 'PhotoFood' }
             },
             {
-              src: '/images/6.jpg',
+              src: '/wayne-website/images/6.jpg',
               description: '<span style="opacity: 0.5">photo /</span> <span>product</span>',
               background: 'var(--theme-color-dark)',
               text: 'var(--theme-color-light)',
@@ -72,12 +72,12 @@ export default [
         component: Preview,
         meta: {
           images: [
-            '/images/1.jpg',
-            '/images/2.jpg',
-            '/images/3.jpg',
-            '/images/4.jpg',
-            '/images/5.jpg',
-            '/images/6.jpg',
+            '/wayne-website/images/1.jpg',
+            '/wayne-website/images/2.jpg',
+            '/wayne-website/images/3.jpg',
+            '/wayne-website/images/4.jpg',
+            '/wayne-website/images/5.jpg',
+            '/wayne-website/images/6.jpg',
           ]
         }
       },
@@ -87,12 +87,12 @@ export default [
         component: Preview,
         meta: {
           images: [
-            '/images/1.jpg',
-            '/images/2.jpg',
-            '/images/3.jpg',
-            '/images/4.jpg',
-            '/images/5.jpg',
-            '/images/6.jpg',
+            '/wayne-website/images/1.jpg',
+            '/wayne-website/images/2.jpg',
+            '/wayne-website/images/3.jpg',
+            '/wayne-website/images/4.jpg',
+            '/wayne-website/images/5.jpg',
+            '/wayne-website/images/6.jpg',
           ]
         }
       },
@@ -102,12 +102,12 @@ export default [
         component: Preview,
         meta: {
           images: [
-            '/images/1.jpg',
-            '/images/2.jpg',
-            '/images/3.jpg',
-            '/images/4.jpg',
-            '/images/5.jpg',
-            '/images/6.jpg',
+            '/wayne-website/images/1.jpg',
+            '/wayne-website/images/2.jpg',
+            '/wayne-website/images/3.jpg',
+            '/wayne-website/images/4.jpg',
+            '/wayne-website/images/5.jpg',
+            '/wayne-website/images/6.jpg',
           ]
         }
       },
@@ -117,12 +117,12 @@ export default [
         component: Preview,
         meta: {
           images: [
-            '/images/1.jpg',
-            '/images/2.jpg',
-            '/images/3.jpg',
-            '/images/4.jpg',
-            '/images/5.jpg',
-            '/images/6.jpg',
+            '/wayne-website/images/1.jpg',
+            '/wayne-website/images/2.jpg',
+            '/wayne-website/images/3.jpg',
+            '/wayne-website/images/4.jpg',
+            '/wayne-website/images/5.jpg',
+            '/wayne-website/images/6.jpg',
           ]
         }
       },
@@ -132,12 +132,12 @@ export default [
         component: Preview,
         meta: {
           images: [
-            '/images/1.jpg',
-            '/images/2.jpg',
-            '/images/3.jpg',
-            '/images/4.jpg',
-            '/images/5.jpg',
-            '/images/6.jpg',
+            '/wayne-website/images/1.jpg',
+            '/wayne-website/images/2.jpg',
+            '/wayne-website/images/3.jpg',
+            '/wayne-website/images/4.jpg',
+            '/wayne-website/images/5.jpg',
+            '/wayne-website/images/6.jpg',
           ]
         }
       },
@@ -147,12 +147,12 @@ export default [
         component: Preview,
         meta: {
           images: [
-            '/images/1.jpg',
-            '/images/2.jpg',
-            '/images/3.jpg',
-            '/images/4.jpg',
-            '/images/5.jpg',
-            '/images/6.jpg',
+            '/wayne-website/images/1.jpg',
+            '/wayne-website/images/2.jpg',
+            '/wayne-website/images/3.jpg',
+            '/wayne-website/images/4.jpg',
+            '/wayne-website/images/5.jpg',
+            '/wayne-website/images/6.jpg',
           ]
         }
       }
@@ -172,7 +172,7 @@ export default [
         {
           question: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit?',
           answer: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, nulla? Doloribus eveniet possimus totam? Asperiores repudiandae corrupti rerum eveniet magni perferendis amet quo et eos unde voluptatibus, perspiciatis fuga quam, porro distinctio. Sit quaerat alias, ab optio velit nisi maxime! Inventore aperiam commodi placeat fugiat accusantium, aspernatur maiores. Illo, expedita.',
-          image: '/images/1.jpg',
+          image: '/wayne-website/images/1.jpg',
         },
         {
           question: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit?',
@@ -187,7 +187,7 @@ export default [
         {
           question: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit?',
           answer: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. At, nulla? Doloribus eveniet possimus totam? Asperiores repudiandae corrupti rerum eveniet magni perferendis amet quo et eos unde voluptatibus, perspiciatis fuga quam, porro distinctio. Sit quaerat alias, ab optio velit nisi maxime! Inventore aperiam commodi placeat fugiat accusantium, aspernatur maiores. Illo, expedita.',
-          image: '/images/2.jpg',
+          image: '/wayne-website/images/2.jpg',
         },
         {
           question: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit?',
@@ -202,7 +202,7 @@ export default [
     path: '/about',
     component: About,
     meta: {
-      image: '/images/3.jpg'
+      image: '/wayne-website/images/3.jpg'
     }
   },
   {
@@ -219,14 +219,14 @@ export default [
           fitScreen: true,
           images: [
             {
-              src: '/images/4.jpg',
+              src: '/wayne-website/images/4.jpg',
               description: '<span style="opacity: 0.5">contact /</span> <span>bookings</span>',
               background: 'var(--theme-color-dark)',
               text: 'var(--theme-color-light)',
               to: { name: 'ContactBookings' }
             },
             {
-              src: '/images/5.jpg',
+              src: '/wayne-website/images/5.jpg',
               description: '<span style="opacity: 0.5">contact /</span> <span>customer support</span>',
               background: 'var(--theme-color-dark)',
               text: 'var(--theme-color-light)',
@@ -245,7 +245,7 @@ export default [
         path: 'customer-service',
         component: Service,
         meta: {
-          image: '/images/6.jpg'
+          image: '/wayne-website/images/6.jpg'
         }
       }
     ]
